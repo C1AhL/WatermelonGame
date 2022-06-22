@@ -2,6 +2,9 @@ import QtQuick
 import QtQuick.Window
 import QtQuick.Controls
 import QtQuick.Particles
+
+//author:chenhailin
+//edition:1.0/2022/6/22
 Window {
     id: screen
     visible: true
