@@ -1,6 +1,9 @@
 import QtQuick 2.0
 import QtQuick.Controls
 import QtMultimedia
+
+//author:chenhailin
+//edition:1.0/2022/6/22
     Canvas{
 /*  自学小课堂（来源csdn）
     Canvas元素提供了一种与分辨率无关的位图绘制机制。
