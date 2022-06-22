@@ -17,7 +17,7 @@ Rectangle {
             spacing: 20
             Layout.alignment: Qt.AlignCenter
             Image {
-                source: "qrc:/icon/finish.png"
+                source: "qrc:/icon/finish.png"  //图片来源
                 width: 58
                 height: 58
             }
@@ -42,12 +42,12 @@ Rectangle {
         Text {
             Layout.alignment: Qt.AlignCenter
             Layout.fillWidth: true
-            color: "#FFFFFF"
+            color: "#FFFFFF" //颜色设置为白色
             font.pixelSize: 17
             font.family: "Microsoft Yahei"
             font.letterSpacing: 5
             text: "点击重新开始"
-            horizontalAlignment: Text.AlignHCenter
+            horizontalAlignment: Text.AlignHCenter   //将文本文字置于中央
         }
 
     }
