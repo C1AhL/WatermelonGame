@@ -21,7 +21,7 @@ Canvas {
         context.clearRect(0,0, canvas.width, canvas.height);
         var scoreStr  = value.toString()
         var dy = 0
-        var spacing = 5
+        var spacing = 5 //间距为5
         var dx = canvas.width/2 -  ((drawWidth + spacing) * scoreStr.length - spacing)/2;
         for (var i in scoreStr) {
             context.drawImage(numberImage, numberImage.getNumberX(parseInt(scoreStr[i])), 0, numberWidth,numberHeight,
@@ -34,7 +34,7 @@ Canvas {
         id : numberImage
 
         source: "qrc:/icon/number1.png" //图片来源
-        visible: false
+        visible: false//设置为不可见
         mipmap: true
 
         function getNumberX(num) {
