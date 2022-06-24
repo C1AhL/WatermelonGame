@@ -45,4 +45,32 @@ import QtMultimedia
         context.lineTo(canvas.width, lineDashY);
         context.stroke();
     }
+    
+     SoundEffect {
+        id: downSound
+        source: "../audio/down.wav"
+    }
+
+    SoundEffect {
+        id: mergeSound1
+        volume: 0.6
+        source: "../audio/merge1.wav"
+    }
+
+    SoundEffect {
+        id: mergeSound2
+        source: "../audio/merge2.wav"
+    }
+
+    SoundEffect {
+        id: finishSound
+        source: "../audio/finish.wav"
+    }
+
+    ScoreNumber {
+        id: scoreNumber
+        x: 10
+        y: 20
+        value: score
+    }
 }
