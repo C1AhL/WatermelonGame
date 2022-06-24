@@ -25,7 +25,6 @@ import QtMultimedia
 
         function draw() {
 
-         // BallRes.process();
           requestAnimationFrame(draw);
        }
 
