@@ -1,6 +1,9 @@
 import QtQuick 2.0
 import QtQuick.Particles
 import QtMultimedia
+//author:chenhailin
+//edition:1.0/2022/6/23
+
 //小球合并时的动画效果控制
 Item {
     property int modelSize: 5
