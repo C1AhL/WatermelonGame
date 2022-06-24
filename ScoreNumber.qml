@@ -8,9 +8,9 @@ import QtQuick 2.12
 
 Canvas {
     property int value: 1200
-    property DoubleValidator numberWidth: numberImage.sourceSize.width / 10
-    property DoubleValidator numberHeight: numberImage.sourceSize.height
-    property DoubleValidator drawWidth:  numberWidth * height / numberHeight
+    property var numberWidth: numberImage.sourceSize.width / 10
+    property var numberHeight: numberImage.sourceSize.height
+    property var drawWidth:  numberWidth * height / numberHeight
 
     id: canvas
     width: drawWidth * value.toString().length  //显示宽度为动态设置
