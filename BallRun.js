@@ -194,5 +194,52 @@ function ballsMove() {
         }
 
     }
+            
+    //求碰撞后小球的速度以及最终位置
+function changeSpeedAndDirection(ball1, ball2, distance, radius) {
+
+    if (distance < radius) {
+        let dd = radius - distance;
+        let offsetC = radius - distance;
+        let ballOffsetX = (ball1.pointX - ball2.pointX) / radius * offsetC ;
+        let ballOffsetY = Math.abs((ball1.pointY - ball2.pointY) / radius * offsetC);
+
+        let ball1MassRation = ball2.mass / (ball1.mass+ball2.mass);
+        let ball2MassRation = ball1.mass / (ball1.mass+ball2.mass);
+
+        ball1.pointX += ballOffsetX * ball1MassRation;
+        ball2.pointX -= ballOffsetX * ball2MassRation;
+        if (ball1.pointY > ball2.pointY)  ball2.pointY -= ballOffsetY;
+               else ball1.pointY -= ballOffsetY;
+
+    }
+    let dx = ball1.pointX - ball2.pointX
+    let dy = ball1.pointY - ball2.pointY
+
+    let ex = dx / radius; let ey = dy / radius;
+
+    let v1n = ex * ball1.vx + ey * ball1.vy
+    let v2n = ex * ball2.vx + ey * ball2.vy
+    if(v1n >= v2n) return;
+    let v1nn = ball1.cor * ((ball1.mass - ball2.mass) * v1n + 2 *ball2.mass *v2n ) / (ball1.mass +ball2.mass)
+    let v2nn = ball2.cor * ((ball2.mass - ball1.mass) * v2n + 2 *ball1.mass *v1n ) / (ball1.mass +ball2.mass)
+
+    let ux = -dy / radius; let uy = dx / radius;
+    let v1t =ux * ball1.vx + uy*ball1.vy
+    let v2t = ux * ball2.vx + uy * ball2.vy
+
+    ball1.vx = v1nn*ex +v1t*ux;
+    ball1.vy = v1nn*ex +v1t*uy;
+
+    ball2.vx = v2nn*ex +v2t*ux;
+    ball2.vy = v2nn*ex +v2t*uy;
+
+
+    if (v1n == 0 && v1t ==0 && v2t == 0) {
+        ball2.vx += 0.1
+        ball2.vy += 0.3
+    }
+
+   }
 }
 
